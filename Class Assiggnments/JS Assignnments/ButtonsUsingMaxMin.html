@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="display" /><br /><br />
+    <button onclick="appendToDisplay('1')">1</button>
+    <button onclick="appendToDisplay('2')">2</button>
+    <button onclick="appendToDisplay('3')">3</button><br />
+    <button onclick="appendToDisplay('4')">4</button>
+    <button onclick="appendToDisplay('5')">5</button>
+    <button onclick="appendToDisplay('6')">6</button><br />
+    <button onclick="appendToDisplay('7')">7</button>
+    <button onclick="appendToDisplay('8')">8</button>
+    <button onclick="appendToDisplay('9')">9</button><br />
+    <br />
+    <button onclick="next()">Next</button>
+    <button onclick="max()">Max</button>
+    <button onclick="min()">Min</button>
+
+    <script>
+      var arr = new Array();
+      function appendToDisplay(value) {
+        document.getElementById("display").value += value;
+      }
+      function next() {
+        var num = document.getElementById("display").value;
+        arr.push(num);
+        document.getElementById("display").value = "";
+      }
+      function max() {
+        if (arr.length > 0) {
+          let max = parseFloat(arr[0]);
+          for (let i = 1; i < arr.length; i++) {
+            let currentNum = parseFloat(arr[i]);
+            if (!isNaN(currentNum) && currentNum > max) {
+              max = currentNum;
+            }
+          }
+          document.getElementById("display").value = max;
+        }
+      }
+      function min() {
+        if (arr.length > 0) {
+          let min = parseFloat(arr[0]);
+          for (let i = 1; i < arr.length; i++) {
+            let currentNum = parseFloat(arr[i]);
+            if (!isNaN(currentNum) && currentNum < min) {
+              min = currentNum;
+            }
+          }
+          document.getElementById("display").value = min;
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>3-Digit Armstrong Numbers</title>
+  </head>
+  <body>
+    <h1>3-Digit Armstrong Numbers</h1>
+
+    <script>
+      function isArmstrongNumber(number) {
+        let n = number;
+        let sum = 0;
+
+        while (n > 0) {
+          const digit = n % 10;
+          sum += digit * digit * digit;
+          n = Math.floor(n / 10);
+        }
+
+        return sum === number;
+      }
+
+      function findArmstrongNumbers() {
+        const result = [];
+        let n = 100;
+
+        while (n <= 999) {
+          let sum = 0;
+          let m = n;
+
+          while (m > 0) {
+            const digit = m % 10;
+            sum += digit * digit * digit;
+            m = Math.floor(m / 10);
+          }
+
+          if (sum === n) {
+            result.push(n);
+          }
+
+          n++;
+        }
+
+        return result;
+      }
+
+      const armstrongNumbers = findArmstrongNumbers();
+      document.write("3-Digit Armstrong Numbers:", armstrongNumbers);
+    </script>
+  </body>
+</html>

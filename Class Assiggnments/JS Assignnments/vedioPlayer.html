@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Video Player - InCoder</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../CSS/viedo.css" />
+  </head>
+  <body>
+    <section>
+      <div class="container">
+        <div class="video-player">
+          <video
+            src="audio/Cristiano+Ronaldo+●King+Of+Dribbling+Skills●+Man+United+GiveFastLink.mp4"
+          ></video>
+          <div class="progress-bar-container">
+            <div class="videoProgressBar"></div>
+            <div class="dot"></div>
+          </div>
+          <div class="controls">
+            <div class="control-icons">
+              <i class="fas fa-backward reverseVideo"></i>
+              <i class="fas fa-play playBtn"></i>
+              <i class="fas fa-pause hide pauseBtn"></i>
+              <i class="fas fa-forward forwardVideo"></i>
+              <span class="duration-text currentVideoDuration">00:00</span>
+            </div>
+            <div class="volume-control">
+              <i class="fas fa-volume-high"></i>
+              <input type="range" class="volume" value="100" />
+            </div>
+            <div class="control-icons">
+              <span class="duration-text totalVideoDuration"></span>
+              <i class="fas fa-expand full-screen"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="../JS/video.js"></script>
+  </body>
+</html>

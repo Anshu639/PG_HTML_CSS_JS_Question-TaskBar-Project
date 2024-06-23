@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button type="submit" onclick="turnOn()">Turn On</button>
+    <img
+      id="bulb"
+      src="../img/bulb_off.jpeg"
+      alt="close Bulb"
+      width="200px"
+      height="auto"
+    />
+    <button type="submit" onclick="turnOff()">Turn Off</button>
+  </body>
+  <script>
+    function turnOn() {
+      document.getElementById("bulb").src = "../img/bulb_on.jpeg";
+    }
+    function turnOff() {
+      document.getElementById("bulb").src = "../img/bulb_off.jpeg";
+    }
+  </script>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Local and Global Variables</title>
+  </head>
+  <body>
+    <h2>Local and Global Variables</h2>
+
+    <button onclick="printVariables()">Print Variables</button>
+
+    <script>
+      // Global variable
+      let globaldata = 20;
+
+      function printVariables() {
+        // Local variable
+        let localdata = 10;
+
+        // Printing both variables
+        document.write("Local Variable (localdata):", localdata + "<br>");
+        document.write("Global Variable (globaldata):", globaldata);
+      }
+    </script>
+  </body>
+</html>

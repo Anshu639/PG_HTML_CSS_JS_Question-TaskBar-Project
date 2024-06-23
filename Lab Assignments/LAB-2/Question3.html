@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img
+      id="doon"
+      src="img/zoo.jpg"
+      name="doon"
+      width="300px"
+      height="200px"
+    /><br />
+    <button id="zoom" type="submit" onclick="zoomIn()">Zoom In</button>
+    <button id="out" type="submit" onclick="zoomOut()">Zoom Out</button>
+    <h3 onmouseover="document.book.src='robberscave.jpg'">
+      keep the mouse over the text to see the places to visit in Dehradun
+    </h3>
+    <ul>
+      <li onmouseover="document.doon.src='img/zoo.jpg'">Dehradunzoo</li>
+      <li onmouseover="document.doon.src='img/robbers.jpg'">Robberscave</li>
+      <li onmouseover="document.doon.src='img/clock.jpg'">Clocktower</li>
+    </ul>
+    <script>
+      function zoomIn() {
+        var zoomIn = document.getElementById("doon");
+        var currWidth = zoomIn.clientWidth;
+        zoomIn.style.width = currWidth + 50 + "px";
+        zoomIn.style.height = currWidth + 50 + "px";
+      }
+      function zoomOut() {
+        var zoomOut = document.getElementById("doon");
+        var currWidth = zoomOut.clientWidth;
+        zoomOut.style.width = currWidth - 50 + "px";
+        zoomOut.style.height = currWidth - 50 + "px";
+      }
+    </script>
+  </body>
+</html>

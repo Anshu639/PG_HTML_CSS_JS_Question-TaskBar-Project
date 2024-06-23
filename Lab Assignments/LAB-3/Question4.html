@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function findGroups() {
+        const groups = [];
+        for (let i = 2; i <= 999; i++) {
+          const middle = i;
+          const lower = middle - 1;
+          const upper = middle + 1;
+          if (middle * middle === lower * upper + 1) {
+            console.log(upper, middle, lower);
+          }
+        }
+        return groups;
+      }
+      const result = findGroups();
+      console.log(result);
+    </script>
+  </head>
+  <body></body>
+</html>

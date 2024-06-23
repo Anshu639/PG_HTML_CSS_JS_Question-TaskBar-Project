@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <label for="">Select your favourite color:</label>
+    <select name="" id="list" onchange="select()">
+      <option value="Red">Red</option>
+      <option value="Green">Green</option>
+      <option value="Blue">Blue</option>
+    </select>
+    <script>
+      function select() {
+        var col = document.getElementById("list").value;
+        document.body.style.backgroundColor = col;
+      }
+    </script>
+  </body>
+</html>

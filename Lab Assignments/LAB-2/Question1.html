@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Electricity bill Calculator</h1>
+    <table>
+      <form action=""></form>
+      <tr>
+        <td><label for="">Name </label></td>
+        <td><input type="text" name="" id="name" /></td>
+      </tr>
+      <tr>
+        <td><label for="">Mobile Number </label></td>
+        <td><input type="text" name="" id="mobile" /></td>
+      </tr>
+      <tr>
+        <td><label for=""> Email </label></td>
+        <td><input type="text" name="" id="email" /></td>
+      </tr>
+      <tr>
+        <td><label for="">Unit consumed </label></td>
+        <td><input type="text" name="" id="units" /></td>
+      </tr>
+    </table>
+    <button type="submit" onclick="calculate()">Calculate Bill</button>
+    <script>
+      function calculate() {
+        let name = document.getElementById("name").value;
+        let mobile = document.getElementById("mobile").value;
+        let email = document.getElementById("email").value;
+        let unit = document.getElementById("units").value;
+        if (!name || !mobile || !email || isNaN(unit)) {
+          alert("Please fill all the fields");
+        }
+        let bill = 0;
+        if (unit <= 50) {
+          bill = unit * 3.5;
+        } else if (unit <= 150) {
+          bill = 50 * 3.5 + (unit - 50) * 4;
+        } else if (unit <= 250) {
+          bill = 50 * 3.5 + 100 * 4 + (unit - 150) * 5.2;
+        } else {
+          bill = 50 * 3.5 + 100 * 4 + 100 * 5.2 + (unit - 250) * 6.2;
+        }
+        var message = "Name: " + name + "\n";
+        message += "Mobile Number: " + mobile + "\n";
+        message += "Email ID: " + email + "\n";
+        message += "Units Consumed: " + unit + "\n";
+        message += "Amount Payable: Rs. " + bill.toFixed(2);
+
+        if (confirm(message)) {
+        }
+      }
+    </script>
+  </body>
+</html>

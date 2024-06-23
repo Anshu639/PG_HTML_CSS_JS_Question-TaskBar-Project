@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      document.write("Hi .....<br>");
+
+      try {
+        let input = prompt("Enter a number from 10 to 20");
+        let number = parseInt(input);
+
+        if (isNaN(number)) {
+          throw new Error("Please enter a valid number.");
+        } else if (number >= 10 && number <= 20) {
+          document.write("The entered number is " + number);
+        } else {
+          throw new Error("The number should be between 10 and 20");
+        }
+      } catch (err) {
+        document.write(err.message);
+      } finally {
+        document.write("Got try block !!! catch block !!! finally block!!!");
+      }
+
+      document.write("<br> Hi All, Well!!!<br>");
+    </script>
+  </body>
+</html>

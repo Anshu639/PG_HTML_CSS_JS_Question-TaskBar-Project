@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      document.write("By using array literal method" + "<br>");
+      let arr1 = ["Aakash", "MCA", 500124633, 75];
+      for (let i = 0; i < arr1.length; i++) {
+        document.write(arr1[i] + "<br>");
+      }
+      document.write("<br><br>");
+      document.write("By using array instance method" + "<br>");
+      let arr2 = new Array();
+      arr2[0] = "Aakash";
+      arr2[1] = "MCA";
+      arr2[2] = 500124633;
+      arr2[3] = 75;
+      for (let i = 0; i < arr2.length; i++) {
+        document.write(arr2[i] + "<br>");
+      }
+      document.write("<br><br>");
+      document.write("By using array constructor method" + "<br>");
+      let arr3 = new Array("Aakash", "MCA", 500124633, 75);
+      for (let i = 0; i < arr3.length; i++) {
+        document.write(arr3[i] + "<br>");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <title>Contact Form</title>
+    <style>
+      #title {
+        margin-left: 200px;
+      }
+      form {
+        margin: 0 auto;
+        padding-top: 20px;
+        padding-left: 150px;
+        width: 50%;
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      .form-group label {
+        display: inline-block;
+        margin-right: 5px;
+        width: 110px;
+        font-weight: bold;
+      }
+
+      .form-group input[type="text"],
+      .form-group input[type="email"],
+      .form-group input[type="tel"],
+      .form-group select,
+      .form-group textarea {
+        padding: 8px;
+        width: 30%;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        position: relative;
+      }
+
+      .input-icon {
+        display: inline;
+        width: 10px;
+      }
+
+      .form-group textarea {
+        vertical-align: top;
+      }
+
+      .form-group input[type="radio"] {
+        margin-right: 5px;
+      }
+
+      .form-group input[type="button"] {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h3 id="title">Contact Us Today!!!</h3>
+    <form action="" id="myForm">
+      <div class="form-group">
+        <label for="fname">First Name: </label>
+        <span class="input-icon">👤</span>
+        <input type="text" name="fname" placeholder="First Name" id="fname" />
+      </div>
+      <div class="form-group">
+        <label for="lname">Last Name: </label>
+        <span class="input-icon">👤</span>
+        <input type="text" name="lname" placeholder="Last Name" id="lname" />
+      </div>
+      <div class="form-group">
+        <label for="email">E-mail: </label>
+        <span class="input-icon"><i class="fa fa-envelope"></i></span>
+        <input
+          type="email"
+          name="email"
+          placeholder="E-mail Address"
+          id="email"
+        />
+      </div>
+      <div class="form-group">
+        <label for="phone">Phone: </label>
+        <span class="input-icon"><i class="fa">&#xf095;</i></span>
+        <input type="tel" name="phone" placeholder="Phone Number" id="phone" />
+      </div>
+      <div class="form-group">
+        <label for="address">Address: </label>
+        <span class="input-icon"
+          ><i class="fa fa-home" aria-hidden="true"></i
+        ></span>
+        <input type="text" name="address" placeholder="Address" id="address" />
+      </div>
+      <div class="form-group">
+        <label for="city">City: </label>
+        <span class="input-icon"
+          ><i class="fa fa-home" aria-hidden="true"></i
+        ></span>
+        <input type="text" name="city" placeholder="City" id="city" />
+      </div>
+      <div class="form-group">
+        <label for="state">State: </label>
+        <span class="input-icon"
+          ><i class="fa fa-th-list" aria-hidden="true"></i
+        ></span>
+        <select name="state" id="state">
+          <option value="">Selet Your State</option>
+          <option value="Andhra Pradesh">Andhra Pradesh</option>
+          <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+          <option value="Assam">Assam</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="zipcode">Zip Code: </label>
+        <span class="input-icon"
+          ><i class="fa fa-home" aria-hidden="true"></i
+        ></span>
+        <input type="text" name="zipcode" placeholder="zipcode" id="zipcode" />
+      </div>
+      <div class="form-group">
+        <label for="domain">Website or Domain Name: </label>
+        <span class="input-icon"><i class="fa fa-globe"></i></span>
+        <input
+          type="text"
+          name="domain"
+          placeholder="Websire or Domain Name"
+          id="domain"
+        />
+      </div>
+      <div class="form-group">
+        <label for="hosting">Do You Have Hosting: </label>
+        <input type="radio" name="hosting" id="hostingYes" />Yes
+        <input type="radio" name="hosting" id="hostingNo" />No
+      </div>
+      <div class="form-group">
+        <label for="description">Project Description: </label>
+        <span class="input-icon"><i class="fa fa-pencil"></i></span>
+        <textarea
+          name="description"
+          id="description"
+          cols="30"
+          rows="2"
+          placeholder="Enter project description here..."
+        ></textarea>
+      </div>
+      <div class="form-group">
+        <input type="button" value="Send" id="submitBtn" />
+      </div>
+    </form>
+
+    <script>
+      function validateForm() {
+        const firstName = document.getElementById("fname").value;
+        const lastName = document.getElementById("lname").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const state = document.getElementById("state").value;
+        const domain = document.getElementById("domain").value.trim();
+        const hostingYes = document.getElementById("hostingYes").checked;
+        const hostingNo = document.getElementById("hostingNo").checked;
+
+        if (firstName.trim() === "") {
+          alert("Please enter your First Name.");
+          return false;
+        }
+
+        if (lastName === "") {
+          alert("Please enter your Last Name.");
+          return false;
+        }
+
+        if (email === "" || !email.includes("@")) {
+          alert("Please enter a valid Email address.");
+          return false;
+        }
+
+        if (!/^\d{10}$/.test(phone)) {
+          alert("Please enter a valid 10-digit Phone number.");
+          return false;
+        }
+
+        if (state === "") {
+          alert("Please select a State.");
+          return false;
+        }
+
+        if (!domain.endsWith(".com") && !domain.endsWith(".org")) {
+          alert("Domain Name must end with '.com' or '.org'.");
+          return false;
+        }
+
+        if (!hostingYes && !hostingNo) {
+          alert("Please select whether you have Hosting.");
+          return false;
+        }
+
+        return true;
+      }
+      document
+        .getElementById("submitBtn")
+        .addEventListener("click", validateForm);
+    </script>
+  </body>
+</html>

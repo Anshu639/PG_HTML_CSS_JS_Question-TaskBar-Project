@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Audio Controls</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <style>
+      .btn {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <select id="audioDropdown">
+      <option value="audio\LDW6TPV-crying-woman.mp3">Cry</option>
+      <option value="audio\Theatre Applause - QuickSounds.com.mp3">
+        Applause
+      </option>
+      <option
+        value="audio\Small Group of Young Kids Shouting and Cheering - QuickSounds.com.mp3"
+      >
+        Shout
+      </option>
+      <option value="audio\Jet Standby To Chillout - QuickSounds.com.mp3">
+        Jet Chill Out
+      </option>
+    </select>
+    <button class="btn" id="playButton">
+      <i class="fa-solid fa-play"></i>
+    </button>
+    <button class="btn" id="pauseButton">
+      <i class="fa-solid fa-pause"></i>
+    </button>
+    <button class="btn" id="stopButton">
+      <i class="fa-solid fa-stop"></i>
+    </button>
+    <button class="btn" id="forwardButton">
+      <i class="fa-solid fa-forward"></i>
+    </button>
+    <button class="btn" id="backwardButton">
+      <i class="fa-solid fa-backward"></i>
+    </button>
+    <button class="btn" id="repeatButton">
+      <i class="fa-solid fa-repeat"></i>
+    </button>
+
+    <script>
+      let audioPlayer = new Audio();
+      let isPlaying = false;
+
+      function playAudio(audioFileName) {
+        audioPlayer.src = audioFileName;
+        audioPlayer.play();
+        isPlaying = true;
+      }
+
+      document
+        .getElementById("playButton")
+        .addEventListener("click", function () {
+          const audioDropdown = document.getElementById("audioDropdown");
+          const selectedAudio = audioDropdown.value;
+          if (selectedAudio) {
+            playAudio(selectedAudio);
+          }
+        });
+
+      document
+        .getElementById("pauseButton")
+        .addEventListener("click", function () {
+          if (isPlaying) {
+            audioPlayer.pause();
+            isPlaying = false;
+          }
+        });
+
+      document
+        .getElementById("stopButton")
+        .addEventListener("click", function () {
+          if (isPlaying) {
+            audioPlayer.pause();
+            audioPlayer.currentTime = 0;
+            isPlaying = false;
+          }
+        });
+
+      document
+        .getElementById("forwardButton")
+        .addEventListener("click", function () {
+          if (isPlaying) {
+            audioPlayer.currentTime += 5;
+          }
+        });
+
+      document
+        .getElementById("backwardButton")
+        .addEventListener("click", function () {
+          if (isPlaying) {
+            audioPlayer.currentTime -= 5;
+          }
+        });
+
+      document
+        .getElementById("repeatButton")
+        .addEventListener("click", function () {
+          if (isPlaying) {
+            audioPlayer.currentTime = 0;
+          }
+        });
+    </script>
+  </body>
+</html>
